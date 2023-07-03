@@ -7,6 +7,8 @@ import Woerterlesen from '../views/Woerterlesen.vue'
 import Leseteppich from '../views/LeseTeppich.vue'
 import GeschichtenLesen from '../views/geschichtenLesen.vue'
 import ZahlenLesen from '../views/zahlenLesen.vue'
+import Testung from '../views/testung.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,6 +27,11 @@ const router = createRouter({
       path: '/rechnen',
       name: 'Rechnen',
       component: Rechnen
+    },
+    {
+      path: '/testen',
+      name: 'Testung',
+      component: Testung
     },
     {
       path: '/buchstabenlesen',

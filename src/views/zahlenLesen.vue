@@ -6,8 +6,10 @@
         <div class="row">
           <div class="wortformat">
           <p>{{zufallszahl}}</p>
-          <input type="text" v-model="eingabe" inputmode="numeric">
-
+          <input type="number" v-model="eingabe" @keydown.enter="abgleich">
+          <button @click="abgleich">Pruefen</button>
+            <p v-if="eingabe !== null && isGleich === true">Jaa, das ist richtig. Super!</p>
+            <p v-else-if="eingabe !== null && isGleich === false">Oje. Das war wohl nix...</p>
         </div>
         </div>
         <div class="row">
@@ -22,39 +24,47 @@
   export default {
     data() {
       return {
+        eingabe: null,
         zahlWortContainer: data.zahlWortContainer,
         zufallszahl: 'Bereit?',
+        isGleich: null,
+        count: 0,
+  
       };
     },
     methods: {
       zahlenGenerator() {
-        if(this.zahlWortContainer.length > 0) {
+        if(this.count <= 20) {
           const zahlIndex = Math.floor(Math.random() * this.zahlWortContainer.length);
           this.zufallszahl = this.zahlWortContainer[zahlIndex];
-          this.zahlWortContainer.splice(zahlIndex, 1);
+          this.count ++;
+            
         }
         else {
           this.zufallszahl = 'Fertig :)'
         }
+      },
+      abgleich() {
+        const zahl = this.zahlWortContainer.indexOf(this.zufallszahl) + 1;
+
+        if(this.eingabe !== null && Number(this.eingabe) === zahl) {
+            this.isGleich = true;
+        } else {
+            this.isGleich = false;
+        }
+
       }
+    },
+    mounted () {
+        this.zahlenGenerator();
     }
   }
   </script>
   
   <style scoped>
-  .wortformat{
-    font-size: 200px;
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
   .inner-content {
     min-height: 500px;
   }
-  input {
-    width: 20%;
-    height: 40%;
-    font-size: 180px;
-    text-align: center;
-  }
+ 
 
   </style>
