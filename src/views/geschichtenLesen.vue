@@ -61,22 +61,22 @@ export default {
                 'b': this.geschichteZwei,
                 'c': this.geschichteDrei
             };
-            this.weiter = auswahl;
-            this.geschichte = geschichten[auswahl][this.count];
-            this.count ++;
-
-            if (this.count === geschichten[auswahl][this.count].lenght) {
-                this.geschichte = "Ende der Geschichte!"
-            }
-            console.log(this.geschichte);
-            console.log(this.count)
-
-
             const headlines = {
                 'a': 'Ben und Fridolin',
                 'b': 'Der Junge in der Nacht',
-                'c': 'Sei gespannt was kommt'
+                'c': 'Was ist im Zimmer passiert?'
             };
+            if(this.count < geschichten[auswahl].length) {
+            this.weiter = auswahl;
+            this.geschichte = geschichten[auswahl][this.count];
+            this.count ++;}
+            else {
+                this.geschichte = "Willst du noch eine Geschichte?";
+                this.content = false;
+                this.count = 0;
+            }
+
+   
             this.headline = headlines[auswahl];            
         },
     },
@@ -87,6 +87,7 @@ export default {
     text-align: center;
     font-size: 70px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 10%;
 }
 .card-title{
     font-family: Bubblegum;

@@ -15,6 +15,8 @@
     "Raum", "Ruhe", "Rad", "Rabe", "Rasen", "rot", "Regen", "Sofa", "Sisi", "suchen", "sauer", "Säge", "Schere", "schon", "Schal", "Schlauch", "Schlüssel", "Stern", "Stier", "Star", "stolpern", "steif", "stossen", 
     "Stab", "Tasche", "Tisch", "Tuch", "tauchen", "Traum", "Tiger", "Tau", "Tür", "Uhu", "Uwe", "Ufo", "und", "Ursular", "Willi", "waschen", "wo", "wer", "was", "wann", "Wal", "Wasser", "Wäsche", "zeigen", "Zeiger", 
     "Zeit", "Zitrone", "Zettel", "Zoll", "Zoo", "üben", "über", "Überaschung", "Übung", "Überfall", "übel", "Überfluss", "Ei", "Eis", "Eisen", "Einfall", "Eiche", "eins", "einzeln", "Euro", "Eule", "Europa", "euch", 
-    "Euter", "euer"]
+    "Euter", "euer"],
+
+    "zahlWortContainer": ["eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf", "zwölf", "dreizehn", "vierzehn", "fünfzehn", "sechzehn", "siebzehn", "achtzehn", "neunzehn", "zwanzig"]
 
 }
