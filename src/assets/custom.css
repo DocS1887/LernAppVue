@@ -1,0 +1,33 @@
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    padding-bottom: 10%;
+}
+.inner-content {
+    align-items: center;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    justify-content: center;
+    background-color: white;
+  
+}
+
+@font-face {
+    font-family: Bubblegum;
+    src: url('../assets/font/BubblegumSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url('../assets/font/Ubuntu-Title.ttf') format('truetype');
+}
+h2 {
+    text-align: center;
+    padding-bottom: 2%;
+  }

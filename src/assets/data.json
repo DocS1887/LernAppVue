@@ -1,0 +1,20 @@
+{
+    "geschichteEins":["Es war einmal", "vor langer langer Zeit", "ein kleiner Junge", "und ein kleiner Kater.",
+                    "Der Junge hieß Ben", "und der Kater Fridolin."],
+    "geschichteZwei":["Vor gar nicht", "langer Zeit", "gab es einen","kleinen Jungen.","Dieser Junge hieß Ben.", 
+                    "Eines Nachts wurde Ben wach.", "Und weil er wach war,","hat er nicht geschlafen.",
+                    "Ist doch voll logisch."],
+    "geschichteDrei":["Es gab einmal", "ein Zimmer.", "Das Zimmer gehört Ben Leroy.", "Eines Tages war das", "Zimmer auf einmal leer.", "Wo war das Spielzeug?", "Ben hat nicht aufgeräumt.", "Und Mama hat", "alles weggeworfen!"],
+
+    "woerterArray": ["Auto", "Auge", "Boden", "Bild", "baden", "Berge", "Bach", "Burg", "Blume", "Bus", "besuchen", "Bauch", "Birne", "Brigitte", "Cola", "Clown", "Didi", "die", "der", "das", "Dose", "Dame", "Drache",
+    "Dusche", "Dodo", "du", "Dach", "dünn", "Elefant", "Elf", "Elbe", "Erde", "Esel", "essen", "Eber", "erst", "Fifa", "Filme", "Frau", "fragen", "Feuer", "Fächer", "Flügel", "Fridolin", "gut", "grau", "Geige", 
+    "Gabel", "Gäste", "Glück", "Gemüse", "holen", "halt", "helfen", "Haus", "Hose", "Hase", "Hildegard", "Igel", "Ida", "Insel", "im", "ins", "ist", "Inge", "Junge", "Januar", "Jaguar", "Juli", "ja", "Jahr", "Jacke", 
+    "jetzt", "Jo-Jo", "jubeln", "Jäger", "Knochen", "Koko", "Kuchen", "Kiki", "kann", "Kino", "Kajak", "kein", "Kamel", "Kuh", "Koch", "Klasse", "Käfer", "Käse", "Käfig", "Kälte", "Küken", "lachen", "Lara", "Limo", 
+    "laufen", "Loe", "Lulu", "laut", "Lira", "lila", "Laus", "Lisa", "Lose", "Lama", "Lärm", "Mama", "Momo", "Mimi", "Musik", "Moni", "Maus", "Mauer", "machen", "Mädchen", "Mütze", "Müll", "Nagel", "Nala", "Name",
+    "Nina", "Nase", "nanu", "Ove", "Omi", "Oma", "Opi", "Opa", "Onkel", "Ort", "Ofen", "Paul", "Peter", "parken", "Pilz", "Papa", "Popel", "Qualle", "qualm", "quer", "Quark", "quit", "quatsch", "Quader", "raufen", 
+    "Raum", "Ruhe", "Rad", "Rabe", "Rasen", "rot", "Regen", "Sofa", "Sisi", "suchen", "sauer", "Säge", "Schere", "schon", "Schal", "Schlauch", "Schlüssel", "Stern", "Stier", "Star", "stolpern", "steif", "stossen", 
+    "Stab", "Tasche", "Tisch", "Tuch", "tauchen", "Traum", "Tiger", "Tau", "Tür", "Uhu", "Uwe", "Ufo", "und", "Ursular", "Willi", "waschen", "wo", "wer", "was", "wann", "Wal", "Wasser", "Wäsche", "zeigen", "Zeiger", 
+    "Zeit", "Zitrone", "Zettel", "Zoll", "Zoo", "üben", "über", "Überaschung", "Übung", "Überfall", "übel", "Überfluss", "Ei", "Eis", "Eisen", "Einfall", "Eiche", "eins", "einzeln", "Euro", "Eule", "Europa", "euch", 
+    "Euter", "euer"]
+
+}
