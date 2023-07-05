@@ -16,7 +16,7 @@
         </RouterLink>
       </div>
       <div class="col">
-        <RouterLink class="router-link" to="./woerterlesen">
+        <RouterLink class="router-link" to="./plusrechnen">
           <div class="card text-bg-danger mb-3" style="max-width: 18rem;">
             <div class="card-header"></div>
             <div class="card-body">
@@ -29,7 +29,7 @@
       </div>
       <div class="row">
         <div class="col">
-        <RouterLink class="router-link" to="./leseteppich">
+        <RouterLink class="router-link" to="./minusrechnen">
           <div class="card text-bg-success mb-3" style="max-width: 18rem;">
             <div class="card-header"></div>
             <div class="card-body">

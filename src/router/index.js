@@ -8,6 +8,8 @@ import Leseteppich from '../views/LeseTeppich.vue'
 import GeschichtenLesen from '../views/geschichtenLesen.vue'
 import ZahlenLesen from '../views/zahlenLesen.vue'
 import Testung from '../views/testung.vue'
+import plusRechnen from '../views/plusRechnen.vue'
+import minusRechnen from '../views/minusRechnen.vue'
 
 
 const router = createRouter({
@@ -58,7 +60,16 @@ const router = createRouter({
       name: 'ZahlenLesen',
       component: ZahlenLesen
     },
-
+    {
+      path: '/plusrechnen',
+      name: 'plusRechnen',
+      component: plusRechnen
+    },
+    {
+      path: '/minusrechnen',
+      name: 'minusRechnen',
+      component: minusRechnen
+    },
 
   ]
 })
