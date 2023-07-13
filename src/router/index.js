@@ -10,6 +10,8 @@ import ZahlenLesen from '../views/zahlenLesen.vue'
 import Testung from '../views/testung.vue'
 import plusRechnen from '../views/plusRechnen.vue'
 import minusRechnen from '../views/minusRechnen.vue'
+import plusminusRechnen from '../views/plusminusRechnen.vue'
+import taschenRechner from '../views/taschenRechner.vue'
 
 
 const router = createRouter({
@@ -69,6 +71,16 @@ const router = createRouter({
       path: '/minusrechnen',
       name: 'minusRechnen',
       component: minusRechnen
+    },
+    {
+      path: '/plusminusrechnen',
+      name: 'plusminusRechnen',
+      component: plusminusRechnen
+    },
+    {
+      path: '/taschenrechner',
+      name: 'taschenRechner',
+      component: taschenRechner
     },
 
   ]

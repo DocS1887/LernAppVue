@@ -18,7 +18,7 @@
                         <div class="card-body d-flex flex-column align-items-center">
                             <h5 class="card-title">Mathe</h5>
                             <p class="card-text">Plus und Minus sind für dich bald kein Problem mehr!</p>
-                            <a href="#" class="btn btn-warning mx-auto">Los geht's mit Mathe</a>
+                          <RouterLink to="./rechnen"><a class="btn btn-warning mx-auto">Los geht's mit Mathe</a></RouterLink>
                         </div>
                     </div>
                 </div>
@@ -35,3 +35,5 @@ h1 {
 }
 
 </style>
+<script setup>
+</script>

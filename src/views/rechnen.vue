@@ -40,7 +40,7 @@
         </RouterLink>
       </div>
       <div class="col">
-        <RouterLink class="router-link" to="./geschichtenlesen">
+        <RouterLink class="router-link" to="./plusminusrechnen">
           <div class="card text-bg-warning mb-3" style="max-width: 18rem;">
             <div class="card-header"></div>
             <div class="card-body">

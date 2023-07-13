@@ -11,6 +11,7 @@ import { RouterLink, RouterView } from 'vue-router'
           <RouterLink to="/">Start</RouterLink>
           <RouterLink to="/lesen">Lesen</RouterLink>
           <RouterLink to="/rechnen">Rechnen</RouterLink>
+          <RouterLink to="/taschenrechner">Taschenrechner</RouterLink>
           <RouterLink to="/testen">Testung</RouterLink>
         </nav>
       </div>
