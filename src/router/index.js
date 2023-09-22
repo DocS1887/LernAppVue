@@ -13,7 +13,7 @@ import minusRechnen from '../views/minusRechnen.vue'
 import plusminusRechnen from '../views/plusminusRechnen.vue'
 import taschenRechner from '../views/taschenRechner.vue'
 import login from '../views/login.vue'
-
+import registrieren from '../views/registrieren.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -88,6 +88,12 @@ const router = createRouter({
       name: 'login',
       component: login
     },
+    {
+      path: '/registrieren',
+      name: 'registrieren',
+      component: registrieren
+    },
+
 
   ]
 })
