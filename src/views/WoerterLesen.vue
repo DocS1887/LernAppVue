@@ -1,18 +1,14 @@
 
 <template>
-  <div class="content">
-    <div class="inner-content">
       <h2>Jetzt werden ganze Wörter gelesen</h2>
       <div class="row">
         <div class="wortformat">
         <p>{{zufallswort}}</p>
       </div>
       </div>
-      <div class="row">
+      <div class="row" style="justify-content: center;">
         <button type="button" class="btn btn-outline-info" @click="wortGenerator">Nächstes Wort</button>
       </div>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -42,12 +38,10 @@ export default {
 
 <style scoped>
 .wortformat{
-  font-size: 200px;
+  font-size: 100px;
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.inner-content {
-  min-height: 500px;
-}
+
 
 </style>

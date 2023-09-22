@@ -1,39 +1,49 @@
 <template>
-    <div class="content">
-        <div class="inner-content">
-            <div class="row">
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../assets/img/lesen.png" class="card-img-top" alt="...">
-                        <div class="card-body d-flex flex-column align-items-center">
-                            <h5 class="card-title">Deutsch</h5>
-                            <p class="card-text">Ob Buchstaben, Wörter und ganze Texte. Bald kannst du alles lesen :)</p>
-                            <RouterLink to="./lesen"><a class="btn btn-warning mx-auto">Los geht's mit Deutsch</a></RouterLink>
-                        </div> 
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../assets/img/rechnen.jpg" class="card-img-top" style="width: 250px; height: 350px;">
-                        <div class="card-body d-flex flex-column align-items-center">
-                            <h5 class="card-title">Mathe</h5>
-                            <p class="card-text">Plus und Minus sind für dich bald kein Problem mehr!</p>
-                          <RouterLink to="./rechnen"><a class="btn btn-warning mx-auto">Los geht's mit Mathe</a></RouterLink>
-                        </div>
-                    </div>
-                </div>
+  <div class="row" style="padding-top: 3%">
+    <section>
+      <div class="col d-flex justify-content-center">
+        <RouterLink to="./lesen">
+        <div class="card">
+            <div class="card-body d-flex flex-column align-items-center">
+                <h5 class="card-title">Deutsch</h5>
+                <p class="card-text">Ob Buchstaben, Wörter und ganze Texte. Bald kannst du alles lesen :)</p>
             </div>
         </div>
-    </div>
+        </RouterLink>
+      </div>
+    </section>
+    <section>
+      <div class="col d-flex justify-content-center">
+        <RouterLink to="./rechnen">
+        <div class="card">
+            <div class="card-body d-flex flex-column align-items-center">
+                <h5 class="card-title">Mathe</h5>
+                <p class="card-text">Plus und Minus sind für dich bald kein Problem mehr!</p>
+            </div>
+        </div>
+        </RouterLink>
+      </div>
+    </section>
+  </div>
 </template>
 
 <style scoped>
-h1 {
+
+.card {
+    border-radius: 50%;
+    width: 22rem;
     text-align: center;
-    margin-bottom: 2rem;
-    font-family: Bubblegum;
+    padding: 2%;
+}
+a:link {
+    text-decoration: none;
+}
+section {
+    padding: 5%;
 }
 
+
 </style>
+
 <script setup>
 </script>

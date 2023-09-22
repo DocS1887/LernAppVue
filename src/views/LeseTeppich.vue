@@ -1,58 +1,53 @@
-
 <template>
-  <div class="content">
-    <div class="inner-content">
-      <h2>Der Leseteppich</h2>
-      <div class="row">
-        <nav class="navbar">
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('a')">a</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('b')">b</a> 
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('c')">c</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('d')">d</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('e')">e</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('f')">f</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('g')">g</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('h')">h</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('i')">i</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('j')">j</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('k')">k</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('l')">l</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('m')">m</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('n')">n</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('o')">o</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('p')">p</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('q')">q</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('r')">r</a>
-        </nav>
-      </div>
-      <div class="row">
-      <nav class="navbar">
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('s')">s</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('sch')">sch</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('st')">st</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('t')">t</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('u')">u</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('v')">v</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('w')">w</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('x')">x</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('y')">y</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('z')">z</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('ä')">ä</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('ö')">ö</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('ü')">ü</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('ei')">ei</a>
-          <a class="navbar-brand" href="#" @click="ausgabeTeppich('eu')">eu</a>
-        </nav>
-        <div class="tabellenformat">
-          <table>
-            <tr v-for="(wort, index) in test" :key="index">
-              <td v-if="test[index * 3]">{{ test[index * 3] }}</td>
-              <td v-if="test[index * 3 + 1]">{{ test[index * 3 + 1] }}</td>
-              <td v-if="test[index * 3 + 2]">{{ test[index * 3 + 2] }}</td> 
-            </tr>
-          </table>
-        </div>
-      </div>
+  <h2>Der Leseteppich</h2>
+  <div class="row">
+    <nav class="navbar">
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('a')">a</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('b')">b</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('c')">c</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('d')">d</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('e')">e</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('f')">f</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('g')">g</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('h')">h</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('i')">i</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('j')">j</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('k')">k</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('l')">l</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('m')">m</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('n')">n</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('o')">o</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('p')">p</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('q')">q</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('r')">r</a>
+    </nav>
+  </div>
+  <div class="row">
+  <nav class="navbar">
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('s')">s</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('sch')">sch</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('st')">st</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('t')">t</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('u')">u</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('v')">v</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('w')">w</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('x')">x</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('y')">y</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('z')">z</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('ä')">ä</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('ö')">ö</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('ü')">ü</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('ei')">ei</a>
+      <a class="navbar-brand" href="#" @click="ausgabeTeppich('eu')">eu</a>
+    </nav>
+    <div class="tabellenformat">
+      <table>
+        <tr v-for="(wort, index) in test" :key="index">
+          <td v-if="test[index * 3]">{{ test[index * 3] }}</td>
+          <td v-if="test[index * 3 + 1]">{{ test[index * 3 + 1] }}</td>
+          <td v-if="test[index * 3 + 2]">{{ test[index * 3 + 2] }}</td>
+        </tr>
+      </table>
     </div>
   </div>
 </template>
@@ -111,7 +106,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .navbar {
   background-color: lightgrey;
   margin-bottom: 1%;

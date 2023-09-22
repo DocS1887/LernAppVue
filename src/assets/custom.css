@@ -1,21 +1,6 @@
-
-.content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    align-items: center;
-    padding-bottom: 10%;
-}
-.inner-content {
-    align-items: center;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-    padding-left: 20%;
-    padding-right: 20%;
-    padding-top: 2%;
-    padding-bottom: 5%;
-    justify-content: center;
-    background-color: white;
-  
+/* Variablen*/
+:root {
+    --dark-bg: rgba(33, 37, 41, 0.2);
 }
 
 @font-face {
@@ -27,7 +12,163 @@
     font-family: Ubuntu;
     src: url('../assets/font/Ubuntu-Title.ttf') format('truetype');
 }
+
 h2 {
     text-align: center;
-    padding-bottom: 2%;
+    font-family: Bubblegum;
+    padding-top: 10%;
+    align-self: flex-end;
+}
+
+input {
+    height: auto;
+    text-align: center;
+    border: 3px solid wheat;
+    font-size: 100px;
+    width: 14%;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    min-height: 100vh;
+}
+.inner-content {
+    align-items: center;
+    justify-content: center
+}
+
+.banner-top {
+    line-height: 1.5;
+    min-height: 3vh;
+    background-color: lightgray;
+    width: 100%;
+    padding-right: 3%;
+}
+
+.header {
+    line-height: 1.5;
+    min-height: 12vh;
+    background-color: wheat;
+    width: 100%;
+    box-shadow: 0 0 10px black;
+    align-self: flex-end;
+
+}
+
+.stickyHeader {
+    position: sticky;
+    top:0;
+    z-index: 100;
+
+}
+
+.btn.btn-outline-info {
+      width: 150px;
+      color: black;
+      border-color: black;
+      &:hover {
+        background-color: wheat;
+        color: black;
+        border-color: black;
+        &:active {
+            background-color: wheat;
+            border-color: wheat;
+        }
+      }
   }
+
+.footer {
+    line-height: 1.5;
+    min-height: 3vh;
+    background-color: wheat;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 0 10px black;
+
+}
+.btn.btn-outline-select  {
+    &:hover{
+        background-color: wheat;
+        color: black;
+        border-color: black;
+        &:active {
+            background-color: wheat;
+            border-color: wheat;
+            color: black;
+        }
+    }
+    width: 200px;
+    color: black;
+    border: 1px solid black;
+    margin: 2%;
+}
+
+  
+
+
+/* Darkmode */
+
+.bg-dark {
+  color: wheat;
+
+  .card {
+      background-color: darkgray;
+      color: wheat;
+  }
+  .btn.btn-outline-info {
+      color: wheat;
+      border-color: wheat;
+  }
+  .btn.btn-outline-info:hover{
+    background-color: wheat;
+    color: black ;
+    border-color:  var(--dark-bg);
+  }
+  .btn.btn-outline-select {
+    color: wheat ;
+    border-color: wheat;
+    &:hover {
+        background-color: wheat;
+        color: black;
+        border-color: rgba(33, 37, 41, 0.2);
+    }
+}
+
+  .header {
+      background-color: var(--dark-bg);
+      box-shadow: 0 0 10px wheat;
+  }
+
+  .banner-top {
+    background-color:  var(--dark-bg);
+    }
+    
+    .footer {
+        background-color:  var(--dark-bg);
+        box-shadow: 0 0 10px wheat;
+        color: wheat;
+    }
+    .nav-item {
+        color: wheat;
+    }
+
+
+}
+.bg-dark input {
+    background-color: lightgray;
+}
+
+.bg-dark li a {
+    color: wheat;
+}
+
+
+
+  

@@ -12,6 +12,7 @@ import plusRechnen from '../views/plusRechnen.vue'
 import minusRechnen from '../views/minusRechnen.vue'
 import plusminusRechnen from '../views/plusminusRechnen.vue'
 import taschenRechner from '../views/taschenRechner.vue'
+import login from '../views/login.vue'
 
 
 const router = createRouter({
@@ -81,6 +82,11 @@ const router = createRouter({
       path: '/taschenrechner',
       name: 'taschenRechner',
       component: taschenRechner
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
     },
 
   ]

@@ -1,22 +1,35 @@
 <template>
-    <div>
-      <h1>Meine App</h1>
-      <Button />
-    </div>
-  </template>
-  
-  <script>
-  import Button from '../components/testSeite.vue';
-  
-  export default {
-    components: {
-      Button
+  <div>
+    <p>Startzeit: {{ startTime }}</p>
+    <p>Endzeit: {{ endTime }}</p>
+    <p>Zeitdifferenz in Minuten: {{ timeDifferenceInMinutes }}</p>
+  </div>
+
+ 
+
+</template>
+
+<script scoped>
+import { parse, differenceInMinutes } from 'date-fns';
+
+export default {
+  data() {
+    return {
+      startTime: '10:00',
+      endTime: '14:30',
+    };
+  },
+  computed: {
+    timeDifferenceInMinutes() {
+      const startDate = parse(this.startTime, 'HH:mm', new Date());
+      const endDate = parse(this.endTime, 'HH:mm', new Date());
+      return differenceInMinutes(endDate, startDate);
     },
-    methods: {
-      handleClick() {
-        console.log("Funktion in der App-View aufgerufen!");
-      }
-    }
-  }
-  </script>
-  
+  },
+};
+</script>
+
+<style >
+
+
+</style>

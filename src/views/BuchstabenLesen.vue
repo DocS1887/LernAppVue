@@ -1,16 +1,12 @@
 <template>
-  <div class="content">
-    <div class="inner-content">
-      <h2>Los Ben, lass uns Buchstaben lesen!</h2>
-      <div class="row">
-        <div class="buchstabenformat">
-        <p>{{zufallsbuchstabe}}</p>
-      </div>
-      </div>
-      <div class="row">
-        <button type="button" class="btn btn-outline-info" @click="zufallsGenerator">Nächster Buchstabe</button>
-      </div>
+  <h2>Los Ben, lass uns Buchstaben lesen!</h2>
+  <div class="row">
+    <div class="buchstabenformat">
+      <p>{{zufallsbuchstabe}}</p>
     </div>
+  </div>
+  <div class="row" style="justify-content: center;">
+    <button type="button" class="btn btn-outline-info" @click="zufallsGenerator">Nächster Buchstabe</button>
   </div>
 </template>
 
@@ -44,14 +40,16 @@ export default {
 
 <style scoped>
 .buchstabenformat{
-  font-size: 300px;
+  font-size: 100px;
   font-weight: 700;
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.inner-content{
-  min-height: 500px;
 
+.btn.btn-outline-info {
+  text-align: center;
+  justify-content: center;
+  align-content: center;
 }
 
 </style>

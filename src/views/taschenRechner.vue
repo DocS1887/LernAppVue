@@ -1,6 +1,4 @@
 <template>
-    <div class="content">
-        <div class="inner-content">
             <div class="background">
                 <div class="row display">
                     {{displayAusgabe}}
@@ -37,8 +35,6 @@
                     <div class="col tastenoperator" @click="calculate()">=</div>
                 </div>
             </div>
-        </div>
-    </div>
 </template>
 
 <script>
@@ -95,9 +91,7 @@ export default {
 </script>
 
 <style scoped>
-.inner-content{
-    font-size: 35px;
-}
+
 .tastenzahl {
     width: 80px;
     height: 80px;
