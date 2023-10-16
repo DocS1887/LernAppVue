@@ -1,15 +1,21 @@
 <template>
   <div>
+    <h1>Anmeldung erfolgreich</h1>
     <p>Startzeit: {{ startTime }}</p>
     <p>Endzeit: {{ endTime }}</p>
     <p>Zeitdifferenz in Minuten: {{ timeDifferenceInMinutes }}</p>
   </div>
 
+  <button>
+  klick mich!
+  </button>
+ {{username}}
  
 
 </template>
 
-<script scoped>
+<script>
+  import axios from 'axios';
 import { parse, differenceInMinutes } from 'date-fns';
 
 export default {
@@ -17,6 +23,7 @@ export default {
     return {
       startTime: '10:00',
       endTime: '14:30',
+      username: '',
     };
   },
   computed: {

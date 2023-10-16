@@ -62,7 +62,7 @@ export default {
       this.startButton = false;
     },
     zahlengenerator() {
-      if(this.count < 5){
+      if(this.count < 20){
         let ersteZahl = Math.floor(Math.random() * 20);
         let zweiteZahl = Math.floor(Math.random() * 20);
         let operatorindex = Math.floor(Math.random() * this.operatorArray.length);
@@ -91,21 +91,25 @@ export default {
       }
     },
     pruefen() {
-      let ergebnis = parseInt(this.eingabe, 10);
-      if(this.operator === '-') {
-        if (ergebnis === this.zahlEins - this.zahlZwei) {
-          this.istRichtig++;
+      if(this.eingabe !== '') {
+        let ergebnis = parseInt(this.eingabe, 10);
+        if(this.operator === '-') {
+          if (ergebnis === this.zahlEins - this.zahlZwei) {
+            this.istRichtig++;
+          } else {
+            this.istFalsch++;
+          }
         } else {
-          this.istFalsch++;
+          if (ergebnis === this.zahlEins + this.zahlZwei) {
+            this.istRichtig++;
+          } else {
+            this.istFalsch++;
+          }
         }
-      } else {
-        if (ergebnis === this.zahlEins + this.zahlZwei) {
-          this.istRichtig++;
-        } else {
-          this.istFalsch++;
-        }
-      }
-      this.zahlengenerator();
+        this.zahlengenerator();
+    } else {
+      alert("Du hast nichts eingegeben!")
+    }
     },
     nochmal() {
       window.location.reload();

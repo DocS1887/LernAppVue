@@ -2,7 +2,7 @@
 <template>
   <h2>Suche dir eine Übung aus!</h2>
   <div class="row">
-    <div class="col">
+    <div class="col" style="justify-content: center;">
       <RouterLink to="./zahlenlesen">
       <button type="button" class="btn btn-outline-select">Zahlen lesen</button>
       </RouterLink>
@@ -23,6 +23,27 @@
       </RouterLink>  
     </div>
   </div>
+
+  <div class="row">
+    <div class="col" style="justify-content: center;">
+      <RouterLink to="./zahlenbishundert">
+      <button type="button" class="btn btn-outline-select">Zahlen bis Hundert</button>
+      </RouterLink>
+    </div>
+    <div class="col" style="justify-content: center;">
+      <RouterLink to="./zahlenreihe">
+      <button type="button" class="btn btn-outline-select">Zahlenreihe</button>
+      </RouterLink>
+    </div>
+    <div class="col" style="justify-content: center;">
+      <RouterLink to="./zahlensortieren">
+      <button type="button" class="btn btn-outline-select">Zahlen sortieren</button>
+      </RouterLink>
+    </div>
+    <div class="col" style="justify-content: center;">
+
+    </div>
+   </div>
 </template>
     
     

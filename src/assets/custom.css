@@ -26,6 +26,11 @@ input {
     border: 3px solid wheat;
     font-size: 100px;
     width: 14%;
+    &:focus {
+        border-color: wheat;
+        caret-color: wheat;
+        outline: none;
+    }
 }
 
 a:link {
@@ -121,6 +126,7 @@ a:link {
   .card {
       background-color: darkgray;
       color: wheat;
+
   }
   .btn.btn-outline-info {
       color: wheat;
@@ -163,6 +169,10 @@ a:link {
 }
 .bg-dark input {
     background-color: lightgray;
+    &:focus {
+        caret-color: var(--dark-bg);
+        outline: none;
+    }
 }
 
 .bg-dark li a {

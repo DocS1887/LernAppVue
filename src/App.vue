@@ -17,7 +17,16 @@ import { useDarkModeStore } from './store/index';
           <div class="login d-flex justify-content-end">
             <ul class="nav justify-content-center">
               <li class="nav-item">
-                <a class="nav-link"><RouterLink to="/login">anmelden</RouterLink></a>
+                <template v-if="isLoggedIn">
+                  <span style="display:inline-block;">{{ username }}</span>
+                  <span style="display: inline-block">
+                    <a class="nav-link" @click="logout">ausloggen</a>
+                  </span>
+                </template>
+                <template v-else>
+                  <a class="nav-link"><RouterLink to="/login">anmelden</RouterLink></a>
+                  {{message}}
+                </template>
               </li>
             </ul>
           </div>
@@ -71,12 +80,20 @@ import { useDarkModeStore } from './store/index';
 </template>
 
 <script scoped>
+  import axios from 'axios';
 export default {
   data() {
     return {
       isSticky: false,
+      username: '',
+      isLoggedIn: false,
+      message: '',
       }
     },
+    created(){
+      this.checkloginStatus();
+    },
+
   computed: {
     isDarkMode() {
       return useDarkModeStore().getDarkModeState;
@@ -100,6 +117,25 @@ export default {
       this.isSticky = false;
       };
     },
+    checkloginStatus() {
+      const token = localStorage.getItem('authToken');
+      if(token) {
+        this.isLoggedIn = true;
+        this.username = "Moin Moin"
+      }
+    },
+    async logout() {
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/logout', {
+        message: response.data.message,
+        isLoggedIn: false,
+      });
+    }
+    catch (error) {
+      console.error(error)
+    }
+    }
+
   }
 };
 </script>

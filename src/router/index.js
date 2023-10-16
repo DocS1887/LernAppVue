@@ -14,6 +14,9 @@ import plusminusRechnen from '../views/plusminusRechnen.vue'
 import taschenRechner from '../views/taschenRechner.vue'
 import login from '../views/login.vue'
 import registrieren from '../views/registrieren.vue'
+import zahlenbishundert from '../views/zahlenBishundert.vue'
+import zahlenreihe from '../views/zahlenreihe.vue'
+import zahlensortieren from '../views/zahlensortieren.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -93,7 +96,21 @@ const router = createRouter({
       name: 'registrieren',
       component: registrieren
     },
-
+    {
+      path: '/zahlenbishundert',
+      name: 'zahlenbishundert',
+      component: zahlenbishundert
+    },
+    {
+    path: '/zahlenreihe',
+    name: 'zahlenreihe',
+    component: zahlenreihe
+    },
+    {
+     path: '/zahlensortieren',
+      name: 'zahlensortieren',
+      component: zahlensortieren
+    },
 
   ]
 })

@@ -17,6 +17,10 @@
     "Zeit", "Zitrone", "Zettel", "Zoll", "Zoo", "üben", "über", "Überaschung", "Übung", "Überfall", "übel", "Überfluss", "Ei", "Eis", "Eisen", "Einfall", "Eiche", "eins", "einzeln", "Euro", "Eule", "Europa", "euch", 
     "Euter", "euer"],
 
-    "zahlWortContainer": ["eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf", "zwölf", "dreizehn", "vierzehn", "fünfzehn", "sechzehn", "siebzehn", "achtzehn", "neunzehn", "zwanzig"]
+    "zahlWortContainer": ["eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf", "zwölf", "dreizehn", "vierzehn", "fünfzehn", "sechzehn", "siebzehn", "achtzehn", "neunzehn", "zwanzig",
+    "Einundzwanzig", "Zweiundzwanzig", "Dreiundzwanzig", "Vierundzwanzig", "Fünfundzwanzig", "Sechsundzwanzig", "Siebenundzwanzig", "Achtundzwanzig", "Neunundzwanzig", "Dreizig", "Einunddreizig", "Zweiunddreizig", "Dreiunddreizig", "Vierunddreizig", "Funfunddreizig", "Sechsunddreizig", "Siebenunddreizig", "Achtunddreizig", "Neununddreizig", "Vierzig", "Einundvierzig", "Zweiundvierzig", "Dreiundvierzig", "Vierundvierzig", "Fünfundvierzig", "Sechsundvierzig", "Siebenundvierzig", "Achtundvierzig", "Neunundvierzig", "Fünfzig", "Einundfünfzig", "Zweiundfünfzig", "Dreiundfünfzig", "Vierundfünfzig", "Fünfundfünfzig", "Sechsundfünfzig", "Sechsundsechzig", 
+    "Siebenundsechzig", "Achtundsechzig", "Neunundsechzig", "Siebzig", "Einundsiebzig", "Zweiundsiebzig", "Dreiundsiebzig", "Vierundsiebzig", "Fünfundsiebzig", "Sechundsiebzig", "Siebenundsiebzig", "Achtundsiebzig", "Neunundsiebzig", "Achtzig", "Einundachtzig", "Zweiundachtzg", "Dreiundachtig", "Vierundachzig", "Fünfundachhtzig", "Sechsundachtzig", "Siebenundachtzig", "Achtundachtzig", "Neunundachtzig", "Neunzig", "Einundneunzig", "Zweiundneunzig", "Dreiundneunzig", "Vierundneuzig", "Fünfundneunzig", "Sechsundneuzig", "Siebenundneunzig", "Achtundneunzig", "Neunundneunzig", "Einhundert" ]
+
+
 
 }

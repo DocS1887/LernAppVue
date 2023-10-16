@@ -1,7 +1,21 @@
 <template>
   <div class="row" style="padding-top: 3%">
+    <div class="col">
+    <aside>
+      <p><strong>Hallo und willkommen</strong>
+      bei Lernen macht Spaß</p>
+      <p>Melde dich an um Punkte zu sammeln. Mit diesen Punkten kannst du dann ein Spiel spielen.</p>
+      <p>Hier geht es zur Anmeldung
+      <RouterLink to="./login">
+      <button type="button" class="btn btn-outline-select">Anmeldung</button>
+      </RouterLink>
+      </p>
+    </aside>
+  </div>
+  <div class="col">
+    <main>
     <section>
-      <div class="col d-flex justify-content-center">
+      <div class="col d-flex justify-content-end">
         <RouterLink to="./lesen">
         <div class="card">
             <div class="card-body d-flex flex-column align-items-center">
@@ -13,7 +27,7 @@
       </div>
     </section>
     <section>
-      <div class="col d-flex justify-content-center">
+      <div class="col d-flex justify-contenstartt">
         <RouterLink to="./rechnen">
         <div class="card">
             <div class="card-body d-flex flex-column align-items-center">
@@ -24,6 +38,8 @@
         </RouterLink>
       </div>
     </section>
+    </main>
+  </div>
   </div>
 </template>
 
@@ -34,6 +50,8 @@
     width: 22rem;
     text-align: center;
     padding: 2%;
+    box-shadow: 0 0 10px black;
+    border: 1px solid;
 }
 a:link {
     text-decoration: none;
@@ -41,7 +59,14 @@ a:link {
 section {
     padding: 5%;
 }
+aside {
+  border: 1px solid;
+  box-shadow: 0 0 10px black;
+  padding: 2%;
+  min-height: 22rem;
 
+
+}
 
 </style>
 

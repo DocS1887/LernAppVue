@@ -74,14 +74,17 @@
         }
       },
       pruefen() {
-        let ergebnis = parseInt(this.eingabe, 10);
-        if (ergebnis == this.zahlEins + this.zahlZwei) {
-          this.istRichtig++;
-        } else {
-          this.istFalsch++;
-        }
-        this.zahlengenerator();
-
+        if(this.eingabe !== '') {
+          let ergebnis = parseInt(this.eingabe, 10);
+          if (ergebnis == this.zahlEins + this.zahlZwei) {
+            this.istRichtig++;
+          } else {
+            this.istFalsch++;
+          }
+          this.zahlengenerator();
+      } else {
+        alert("Du hast nichts eingegeben!")
+      }
       },
       nochmal() {
         window.location.reload();

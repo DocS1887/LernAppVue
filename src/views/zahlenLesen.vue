@@ -72,6 +72,7 @@
         this.$refs.inputField.focus();
       },
       abgleich() {
+        if(this.eingabe !== '') {
         const zahl = this.zahlWortContainer.indexOf(this.zufallszahl) + 1;
 
         if(this.eingabe !== null && Number(this.eingabe) === zahl) {
@@ -81,7 +82,10 @@
         }
         this.eingabe = '';
         this.zahlenGenerator();
-        
+      } else {
+        alert("Du hast nichts eingegeben!")
+      }
+              
       },
       nochmal() {
         window.location.reload();
