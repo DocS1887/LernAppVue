@@ -29,9 +29,9 @@
       </div>
 
       <div class="outputField">
-        <div class="wortformat">
-            <p>{{geschichte}}</p>
-            <button type="button" class="btn btn-outline-info" v-if="content" @click="nextWord(weiter)">Weiter</button>
+        <div class="wordformat">
+            <p>{{story}}</p>
+            <button type="button" class="btn btn-outline-info" v-if="content" @click="nextWord(more)">Weiter</button>
         </div>
       </div>
   </div>
@@ -41,48 +41,44 @@
 import data from '../assets/data.json'
 export default {
     data() {
-        
         return {
-                geschichteEins: data.geschichteEins,
-                geschichteZwei: data.geschichteZwei,
-                geschichteDrei: data.geschichteDrei,
-                geschichte: '',
+                storyOne: data.storyOne,
+                storyTwo: data.storyTwo,
+                storyThree: data.storyThree,
+                story: '',
                 count: 0,
                 content: false,
                 headline: 'Eine von drei spannenden Geschichten',
-                
         }
     },
     methods: {
-        nextWord(auswahl) {
-            const geschichten = {
-                'a': this.geschichteEins,
-                'b': this.geschichteZwei,
-                'c': this.geschichteDrei
+        nextWord(selection) {
+            const storys = {
+                'a': this.storyOne,
+                'b': this.storyTwo,
+                'c': this.storyThree
             };
             const headlines = {
                 'a': 'Ben und Fridolin',
                 'b': 'Der Junge in der Nacht',
                 'c': 'Was ist im Zimmer passiert?'
             };
-            if(this.count < geschichten[auswahl].length) {
-            this.weiter = auswahl;
-            this.geschichte = geschichten[auswahl][this.count];
+            if(this.count < storys[selection].length) {
+            this.more = selection;
+            this.story = storys[selection][this.count];
             this.count ++;}
             else {
-                this.geschichte = "Willst du noch eine Geschichte?";
+                this.story = "Willst du noch eine Geschichte?";
                 this.content = false;
                 this.count = 0;
             }
-
-   
-            this.headline = headlines[auswahl];            
+            this.headline = headlines[selection];            
         },
     },
 }
 </script>
 <style scoped>
-.wortformat {
+.wordformat {
     text-align: center;
     font-size: 60px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

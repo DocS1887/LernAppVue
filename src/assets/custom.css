@@ -16,7 +16,7 @@
 h2 {
     text-align: center;
     font-family: Bubblegum;
-    padding-top: 10%;
+    padding-top: 20px;
     align-self: flex-end;
 }
 
@@ -60,7 +60,7 @@ a:link {
 .header {
     line-height: 1.5;
     min-height: 12vh;
-    background-color: wheat;
+    background: linear-gradient(to bottom, lightgray, wheat);
     width: 100%;
     box-shadow: 0 0 10px black;
     align-self: flex-end;
@@ -115,6 +115,13 @@ a:link {
     margin: 2%;
 }
 
+.break-style {
+    border: 2px solid black;
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
   
 
 
@@ -148,8 +155,8 @@ a:link {
 }
 
   .header {
-      background-color: var(--dark-bg);
       box-shadow: 0 0 10px wheat;
+      background: var(--dark-bg);
   }
 
   .banner-top {

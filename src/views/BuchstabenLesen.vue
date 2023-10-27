@@ -1,45 +1,70 @@
 <template>
   <h2>Los Ben, lass uns Buchstaben lesen!</h2>
+  <div v-if="!showBreakPage">
   <div class="row">
-    <div class="buchstabenformat">
-      <p>{{zufallsbuchstabe}}</p>
+    <div class="letterformat">
+        <p>{{randomLetter}}</p>
     </div>
   </div>
   <div class="row" style="justify-content: center;">
-    <button type="button" class="btn btn-outline-info" @click="zufallsGenerator">Nächster Buchstabe</button>
+    <button v-if="!fertig" type="button" class="btn btn-outline-info" @click="zufallsGenerator">Nächster Buchstabe</button>
+    <button v-if="fertig" type="button" class="btn btn-outline-info" @click="nochmal">Nochmal?</button>
   </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col text-center">
+    <div v-if="showBreakPage">
+      <breakPage></breakPage>
+      <button class="btn btn-outline-select" @click="pauseEnde">Weiter</button>
+    </div>
+  </div>
+</div>
 </template>
 
-
 <script>
+import data from '../assets/data.json'
+import BreakPage from '../components/breakPage.vue'
 export default {
   data() {
     return {
-      buchstabenArray: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",
-        "t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L",
-        "M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","ä","Ä","ü","Ü","ö",
-        "Ö","ß","au","ei","eu","Eu","Au","Ei","ch","Ch"],
-      zufallsbuchstabe: 'Bereit?'
-    };
+      lettersArray: data.lettersArray,
+      randomLetter: 'Bereit?',
+      count: 0,
+      showBreakPage: false,
+      fertig: false,
+        };
   },
+  components: {
+          BreakPage,
+        },
   methods: {
+    // Generate a random Letter from lettersArray in json
     zufallsGenerator() {
-      if(this.buchstabenArray.length > 0) {
-        const buchstabenIndex = Math.floor(Math.random() * this.buchstabenArray.length);
-        this.zufallsbuchstabe = this.buchstabenArray[buchstabenIndex];
-        this.buchstabenArray.splice(buchstabenIndex, 1);
+      if(this.lettersArray.length > 0) {
+        const index = Math.floor(Math.random() * this.lettersArray.length);
+        this.randomLetter = this.lettersArray[index];
+        this.lettersArray.splice(index, 1);
+        this.count++;
+        if(this.count === 10) {
+            this.showBreakPage = !this.showBreakPage;
+        }
       } else {
-        this.zufallsbuchstabe = 'Fertig :)'
+        this.randomLetter = 'Fertig :)'
+        this.fertig = !this.fertig;
       }
     },
-
-
+    nochmal() {
+    window.location.reload();
+  },
+  pauseEnde() {
+    this.showBreakPage = false;
+  }
   },
 }
 </script>
 
 <style scoped>
-.buchstabenformat{
+.letterformat{
   font-size: 100px;
   font-weight: 700;
   text-align: center;

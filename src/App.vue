@@ -10,7 +10,7 @@ import { useDarkModeStore } from './store/index';
       <div class="row">
         <div class="col">
           <div class="form-check form-switch">hell / dunkel
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked  @click="toggleDarkMode">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" :checked="isDarkMode" @change="toggleDarkMode" />
           </div>        
         </div>
         <div class="col">
@@ -88,26 +88,33 @@ export default {
       username: '',
       isLoggedIn: false,
       message: '',
+      isDarkMode: useDarkModeStore().getLocalDarkModeState,
       }
     },
     created(){
       this.checkloginStatus();
+
+      const storedDarkmode = localStorage.getItem('darkmode');
+      if(storedDarkmode !== null) {
+        useDarkModeStore().setLocalDarkModeState(JSON.parse(storedDarkmode));
+        this.isDarkMode = useDarkModeStore().getLocalDarkModeState;
+      }
     },
 
-  computed: {
-    isDarkMode() {
-      return useDarkModeStore().getDarkModeState;
-    },
-  },
+
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
   },
   beforeDestroy() {
   window.removeEventListener('scroll', this.handleScroll);
   },
+
   methods: {
     toggleDarkMode() {
       useDarkModeStore().toggleDarkMode();
+      this.isDarkMode = useDarkModeStore().getLocalDarkModeState;
+      localStorage.setItem('darkmode', JSON.stringify(this.isDarkMode));
+      
     },
     handleScroll(){
     const scrollPosition = window.scrollY;
@@ -135,18 +142,16 @@ export default {
       console.error(error)
     }
     }
-
   }
 };
 </script>
 
 <style>
 body {
-  background-color: lightgray;
+  background: linear-gradient(to bottom, wheat, lightgray);
 }
 .nav-item {
-  align-self: flex-end;
-  
+  align-self: flex-end; 
 }
 
 li a {

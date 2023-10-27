@@ -1,46 +1,55 @@
 <template>
       <h2>Hier rechnen Profis. Plus und Minus gemischt!</h2>
-      <div class="row">
-        <div class="aufgabenformat">
-
-            <p>{{ zahlEins }} {{operator}} {{ zahlZwei }} = <input type="text" v-model="eingabe" ref="inputField" @keydown.enter="pruefen"></p>
-
-
-
-            <div class="row d-flex justify-content-center auswertung"  v-if="endErgbnis === true">
-            <h2>Ergebnis:</h2>
-            <div class="col"></div>
-            <div class="col d-flex justify-content-center">
-              <div class="card text-bg-success mb-3 card-size" style="max-width: 13rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Richtige</h5>
-                  <p class="card-text">{{ istRichtig }}</p>
+      <div v-if="!showBreakPage">
+        <div class="row">
+          <div class="aufgabenformat">
+              <p>{{ zahlEins }} {{operator}} {{ zahlZwei }} = <input type="text" v-model="eingabe" ref="inputField" @keydown.enter="pruefen"></p>
+              <div class="row d-flex justify-content-center auswertung"  v-if="endErgbnis === true">
+              <h2>Ergebnis:</h2>
+              <div class="col"></div>
+              <div class="col d-flex justify-content-center">
+                <div class="card text-bg-success mb-3 card-size" style="max-width: 13rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Richtige</h5>
+                    <p class="card-text">{{ istRichtig }}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col d-flex justify-content-center">
-              <div class="card text-bg-danger mb-3" style="max-width: 13rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Falsche</h5>
-                  <p class="card-text">{{ istFalsch }}</p>
+              <div class="col d-flex justify-content-center">
+                <div class="card text-bg-danger mb-3" style="max-width: 13rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Falsche</h5>
+                    <p class="card-text">{{ istFalsch }}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col"></div>
-            <div class="row" style="justify-content: center; padding-top: 5%;">
-              <button type="button" class="btn btn-outline-info" @click="nochmal()">Nochmal?</button>
-            </div>
-        </div>
+              <div class="col"></div>
+              <div class="row" style="justify-content: center; padding-top: 5%;">
+                <button type="button" class="btn btn-outline-info" @click="nochmal()">Nochmal?</button>
+              </div>
+          </div>
+          </div>
         </div>
       </div>
+
       <div class="row">
         <div class="col-6 offset-3 d-flex justify-content-center">
           <button v-if="startButton === true" type="button" class="btn btn-outline-info smaller-button" @click="starten">Los geht's</button>
         </div>
       </div>
+      <div class="row justify-content-center">
+        <div class="col text-center">
+          <div v-if="showBreakPage">
+            <breakPage></breakPage>
+            <button class="btn btn-outline-select" @click="pauseEnde">Weiter</button>
+          </div>
+        </div>
+      </div>
 </template>
 
 <script>
+import BreakPage from '../components/breakPage.vue'
+
 export default {
   data() {
     return {
@@ -54,8 +63,12 @@ export default {
       operatorArray: ['+', '-'],
       operator: '',
       endErgbnis: false,
+      showBreakPage: false,
     }
   },
+  components: {
+          BreakPage,
+        },
   methods: {
     starten() {
       this.zahlengenerator();
@@ -86,6 +99,9 @@ export default {
         this.count++;
         this.eingabe = '';
         this.$refs.inputField.focus();
+        if(this.count === 10) {
+            this.showBreakPage = !this.showBreakPage;
+        }
       } else {
         this.endErgbnis = true;
       }
@@ -113,7 +129,10 @@ export default {
     },
     nochmal() {
       window.location.reload();
-    }
+    },
+    pauseEnde() {
+    this.showBreakPage = false;
+  }
 
   },
 }

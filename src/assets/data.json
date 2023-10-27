@@ -1,10 +1,10 @@
 {
-    "geschichteEins":["Es war einmal", "vor langer langer Zeit", "ein kleiner Junge", "und ein kleiner Kater.",
+    "storyOne":["Es war einmal", "vor langer langer Zeit", "ein kleiner Junge", "und ein kleiner Kater.",
                     "Der Junge hieß Ben", "und der Kater Fridolin."],
-    "geschichteZwei":["Vor gar nicht", "langer Zeit", "gab es einen","kleinen Jungen.","Dieser Junge hieß Ben.", 
+    "storyTwo":["Vor gar nicht", "langer Zeit", "gab es einen","kleinen Jungen.","Dieser Junge hieß Ben.", 
                     "Eines Nachts wurde Ben wach.", "Und weil er wach war,","hat er nicht geschlafen.",
                     "Ist doch voll logisch."],
-    "geschichteDrei":["Es gab einmal", "ein Zimmer.", "Das Zimmer gehört Ben Leroy.", "Eines Tages war das", "Zimmer auf einmal leer.", "Wo war das Spielzeug?", "Ben hat nicht aufgeräumt.", "Und Mama hat", "alles weggeworfen!"],
+    "storyThree":["Es gab einmal", "ein Zimmer.", "Das Zimmer gehört Ben Leroy.", "Eines Tages war das", "Zimmer auf einmal leer.", "Wo war das Spielzeug?", "Ben hat nicht aufgeräumt.", "Und Mama hat", "alles weggeworfen!"],
 
     "woerterArray": ["Auto", "Auge", "Boden", "Bild", "baden", "Berge", "Bach", "Burg", "Blume", "Bus", "besuchen", "Bauch", "Birne", "Brigitte", "Cola", "Clown", "Didi", "die", "der", "das", "Dose", "Dame", "Drache",
     "Dusche", "Dodo", "du", "Dach", "dünn", "Elefant", "Elf", "Elbe", "Erde", "Esel", "essen", "Eber", "erst", "Fifa", "Filme", "Frau", "fragen", "Feuer", "Fächer", "Flügel", "Fridolin", "gut", "grau", "Geige", 
@@ -19,8 +19,15 @@
 
     "zahlWortContainer": ["eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf", "zwölf", "dreizehn", "vierzehn", "fünfzehn", "sechzehn", "siebzehn", "achtzehn", "neunzehn", "zwanzig",
     "Einundzwanzig", "Zweiundzwanzig", "Dreiundzwanzig", "Vierundzwanzig", "Fünfundzwanzig", "Sechsundzwanzig", "Siebenundzwanzig", "Achtundzwanzig", "Neunundzwanzig", "Dreizig", "Einunddreizig", "Zweiunddreizig", "Dreiunddreizig", "Vierunddreizig", "Funfunddreizig", "Sechsunddreizig", "Siebenunddreizig", "Achtunddreizig", "Neununddreizig", "Vierzig", "Einundvierzig", "Zweiundvierzig", "Dreiundvierzig", "Vierundvierzig", "Fünfundvierzig", "Sechsundvierzig", "Siebenundvierzig", "Achtundvierzig", "Neunundvierzig", "Fünfzig", "Einundfünfzig", "Zweiundfünfzig", "Dreiundfünfzig", "Vierundfünfzig", "Fünfundfünfzig", "Sechsundfünfzig", "Sechsundsechzig", 
-    "Siebenundsechzig", "Achtundsechzig", "Neunundsechzig", "Siebzig", "Einundsiebzig", "Zweiundsiebzig", "Dreiundsiebzig", "Vierundsiebzig", "Fünfundsiebzig", "Sechundsiebzig", "Siebenundsiebzig", "Achtundsiebzig", "Neunundsiebzig", "Achtzig", "Einundachtzig", "Zweiundachtzg", "Dreiundachtig", "Vierundachzig", "Fünfundachhtzig", "Sechsundachtzig", "Siebenundachtzig", "Achtundachtzig", "Neunundachtzig", "Neunzig", "Einundneunzig", "Zweiundneunzig", "Dreiundneunzig", "Vierundneuzig", "Fünfundneunzig", "Sechsundneuzig", "Siebenundneunzig", "Achtundneunzig", "Neunundneunzig", "Einhundert" ]
+    "Siebenundsechzig", "Achtundsechzig", "Neunundsechzig", "Siebzig", "Einundsiebzig", "Zweiundsiebzig", "Dreiundsiebzig", "Vierundsiebzig", "Fünfundsiebzig", "Sechundsiebzig", "Siebenundsiebzig", "Achtundsiebzig", "Neunundsiebzig", "Achtzig", "Einundachtzig", "Zweiundachtzg", "Dreiundachtig", "Vierundachzig", "Fünfundachhtzig", "Sechsundachtzig", "Siebenundachtzig", "Achtundachtzig", "Neunundachtzig", "Neunzig", "Einundneunzig", "Zweiundneunzig", "Dreiundneunzig", "Vierundneuzig", "Fünfundneunzig", "Sechsundneuzig", "Siebenundneunzig", "Achtundneunzig", "Neunundneunzig", "Einhundert" ],
 
+   
 
+    "lettersArray": ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",
+    "t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L",
+    "M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","ä","Ä","ü","Ü","ö",
+    "Ö","ß","au","ei","eu","Eu","Au","Ei","ch","Ch"],
+
+    "breakContainer": ["Mach mal Pause", "Hüpfe 10 mal", "Mache 1 Minute Hampelmänner", "Lerne im stehen weiter"]
 
 }

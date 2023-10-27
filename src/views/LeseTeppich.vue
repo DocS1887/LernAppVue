@@ -95,7 +95,6 @@ export default {
             eu: ["Euro", "Eule", "Europa", "euch", "Euter", "euer", "Eutin", "Euler", "Eurostar",],
         },
         test: ''
-
     };
   },
     methods: {

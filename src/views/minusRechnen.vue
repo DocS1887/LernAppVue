@@ -1,5 +1,6 @@
 <template>
         <h2>Rechnen wir mit Minusaufgaben!</h2>
+        <div v-if="!showBreakPage">
         <div class="row">
         <div class="aufgabenformat">
           <p>{{ zahlEins }} - {{ zahlZwei }} = <input type="text" v-model="eingabe" ref="inputField" @keydown.enter="pruefen"></p>
@@ -29,14 +30,27 @@
             </div>
         </div>
       </div>
+      </div>
   
+      <div class="row justify-content-center">
+        <div class="col text-center">
+          <div v-if="showBreakPage">
+            <breakPage></breakPage>
+            <button class="btn btn-outline-select" @click="pauseEnde">Weiter</button>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-6 offset-3 d-flex justify-content-center">
           <button v-if="startButton === true" type="button" class="btn btn-outline-info smaller-button" @click="starten">Los geht's</button>
         </div>
       </div>
+
+
   </template>
   <script>
+  import BreakPage from '../components/breakPage.vue'
     export default {
       data() {
         return {
@@ -48,8 +62,12 @@
         istFalsch: 0,
         startButton: true,
         endErgbnis: false,
+        showBreakPage: false,
         }
       },
+      components: {
+          BreakPage,
+        },
       methods: {
         starten() {
         this.zahlengenerator();
@@ -72,6 +90,9 @@
           this.isGleich = null;
           this.eingabe = '';
           this.$refs.inputField.focus();
+          if(this.count === 10) {
+            this.showBreakPage = !this.showBreakPage;
+        }
           } else {
             this.endErgbnis = true;
           }
@@ -91,6 +112,9 @@
         },
         nochmal() {
           window.location.reload();
+        },
+        pauseEnde() {
+          this.showBreakPage = false;
         }
   
       },
