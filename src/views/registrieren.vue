@@ -85,7 +85,7 @@
           });
           console.log(response.data.message + "Frontend")
           
-          if (response.data.message === 'Die Registrierung war erfolgreich') {
+          if (response.data.message === 'Die Registrierung war erfolgreich!') {
             alert(this.message = response.data.message + " Du kannst dich jetzt anmelden!")
             this.$router.push({ name: 'login' });
         } 

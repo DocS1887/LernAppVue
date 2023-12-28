@@ -75,6 +75,7 @@ def login():
     data = request.get_json()
     username = data.get('username')
     password = data.get('password')
+    
 
     cursor.execute("SELECT id, hashed_password, salt FROM users WHERE username = %s", (username,))
     result = cursor.fetchone()
@@ -88,7 +89,7 @@ def login():
 
         
             session['logged_in'] = True
-            return jsonify({"message": "Erfolgreich eingeloggt", "token": token})
+            return jsonify({"message": "Erfolgreich eingeloggt", "token": token, "user_id": user_id})
             
     return jsonify({"message": "Anmeldung fehlgeschlagen"})
 
@@ -107,10 +108,46 @@ app.logger.addHandler(file_handler)
 
 #app.logger.info("Noch eine Log-Meldung")
 #app.logger.error("Das ist ein Fehler")
+@app.route('/add_points', methods=['POST'])
+@cross_origin(origin='http://localhost:5173', supports_credentials=True)
+def add_points():
+    try:
+        data = request.get_json()
+        user_id = data.get('user_id')
+        punkte = data.get('punkte')
 
-@app.route('/logout')
+        # Punktestand des Benutzers abrufen
+        select_query = "SELECT punkte FROM punkte WHERE user_id = %s"
+        cursor.execute(select_query, (user_id,))
+        existing_points = cursor.fetchone()
+
+        if existing_points:
+            # Benutzer hat bereits Punkte, aktualisiere den Punktestand
+            new_points = existing_points[0] + punkte
+            update_query = "UPDATE punkte SET punkte = %s WHERE user_id = %s"
+            cursor.execute(update_query, (new_points, user_id))
+        else:
+            # Benutzer hat noch keine Punkte, füge neuen Datensatz ein
+            insert_query = "INSERT INTO punkte (user_id, punkte) VALUES (%s, %s)"
+            cursor.execute(insert_query, (user_id, punkte))
+
+        db.commit()
+
+        return jsonify({"message": "Punkte erfolgreich hinzugefügt"})
+
+    except Exception as e:
+        db.rollback()
+        return jsonify({"error": str(e)})
+    finally:
+        cursor.close()
+        db.close()
+
+
+
+@app.route('/logout', methods=['POST'])
 def logout():
     session.pop('logged_in', None)
+    print("Ausgeloggt")
     return jsonify({"message" : "Erfolgreich ausgeloggt"})
 
 if __name__ == '__main__':

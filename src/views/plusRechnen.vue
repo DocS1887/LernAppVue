@@ -48,6 +48,7 @@
 </template>
 <script>
 import BreakPage from '../components/breakPage.vue'
+import { punkteSenden } from '../components/punkteSenden.js'
   export default {
     data() {
       return {
@@ -60,19 +61,23 @@ import BreakPage from '../components/breakPage.vue'
         startButton: true,
         endErgbnis: false,
         showBreakPage: false,
+        punkte: null,
       }
     },
     components: {
           BreakPage,
+          punkteSenden,
+
         },
     methods: {
       starten() {
         this.zahlengenerator();
-        this.startButton = false;
+        this.startButton = false;       
       },
+   
 
       zahlengenerator() {
-        if(this.count < 20){
+        if(this.count < 5){
         let ersteZahl = Math.floor(Math.random() * 20);
         let zweiteZahl = Math.floor(Math.random() * 20);
         let sum = ersteZahl + zweiteZahl
@@ -85,11 +90,12 @@ import BreakPage from '../components/breakPage.vue'
         this.count++;
         this.eingabe = '';
         this.$refs.inputField.focus();
-        if(this.count === 20) {
+        if(this.count === 10) {
             this.showBreakPage = !this.showBreakPage;
         }
         } else {
           this.endErgbnis = true;
+          punkteSenden(this.punkte);
         }
       },
       pruefen() {
@@ -97,6 +103,7 @@ import BreakPage from '../components/breakPage.vue'
           let ergebnis = parseInt(this.eingabe, 10);
           if (ergebnis == this.zahlEins + this.zahlZwei) {
             this.istRichtig++;
+            this.punkte++;
           } else {
             this.istFalsch++;
           }
@@ -105,6 +112,7 @@ import BreakPage from '../components/breakPage.vue'
         alert("Du hast nichts eingegeben!")
       }
       },
+
       nochmal() {
         window.location.reload();
             },

@@ -23,19 +23,16 @@ h2 {
 input {
     height: auto;
     text-align: center;
-    border: 3px solid wheat;
+    border: 3px solid rgb(187, 173, 230);
     font-size: 100px;
     width: 14%;
     &:focus {
-        border-color: wheat;
-        caret-color: wheat;
+        border-color: rgb(187, 173, 230);
+        caret-color: rgb(187, 173, 230);
         outline: none;
     }
 }
 
-a:link {
-    text-decoration: none;
-}
 
 .content {
     display: flex;
@@ -52,7 +49,7 @@ a:link {
 .banner-top {
     line-height: 1.5;
     min-height: 3vh;
-    background-color: lightgray;
+    background-color: lightblue;
     width: 100%;
     padding-right: 3%;
 }
@@ -60,7 +57,7 @@ a:link {
 .header {
     line-height: 1.5;
     min-height: 12vh;
-    background: linear-gradient(to bottom, lightgray, wheat);
+    background: linear-gradient(to bottom, lightblue, rgb(173, 182, 230));
     width: 100%;
     box-shadow: 0 0 10px black;
     align-self: flex-end;
@@ -79,12 +76,12 @@ a:link {
       color: black;
       border-color: black;
       &:hover {
-        background-color: wheat;
+        background-color:  rgb(187, 173, 230);
         color: black;
         border-color: black;
         &:active {
-            background-color: wheat;
-            border-color: wheat;
+            background-color:  rgb(187, 173, 230);
+            border-color:  rgb(187, 173, 230);
         }
       }
   }
@@ -92,7 +89,7 @@ a:link {
 .footer {
     line-height: 1.5;
     min-height: 3vh;
-    background-color: wheat;
+    background-color: linear-gradient(to bottom, lightblue, rgb(173, 182, 230));
     width: 100%;
     align-items: center;
     box-shadow: 0 0 10px black;
@@ -100,12 +97,12 @@ a:link {
 }
 .btn.btn-outline-select  {
     &:hover{
-        background-color: wheat;
+        background-color: rgb(187, 173, 230);
         color: black;
         border-color: black;
         &:active {
-            background-color: wheat;
-            border-color: wheat;
+            background-color: rgb(187, 173, 230);
+            border-color: rgb(187, 173, 230);
             color: black;
         }
     }
@@ -127,6 +124,8 @@ a:link {
 
 /* Darkmode */
 
+
+
 .bg-dark {
   color: wheat;
 
@@ -135,6 +134,108 @@ a:link {
       color: wheat;
 
   }
+
+  nav {
+    display: flex;
+    position: relative;
+  }
+  
+  nav.animate .slider {
+    transition: all 350ms ease-in-out;
+  }
+  
+  nav:hover .slider {
+    opacity: 1;
+  }
+  
+  nav .slider {
+    margin-top: 0.8rem;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 9em;
+    height: 70%;
+    background-color: wheat;
+    border-radius: 0.5rem;
+    transition-delay: 150ms;
+    transition: opacity 250ms ease;
+  }
+  nav ul {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li {
+    list-style: none;
+    position: relative;
+  }
+  nav ul li:hover a img {
+    scale: 1;
+    margin: 0 0.5rem 0 0;
+  }
+  nav ul li:hover ul {
+    height: 8.5rem;
+    opacity: 1;
+  }
+  nav ul li a {
+    width: 9rem;
+    padding: 0.8rem 1rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    color:  var(--dark-bg);
+    cursor: pointer;
+    transition: all 350ms ease-in-out;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  nav ul li a img {
+    width: 1.2rem;
+    height: 1.2rem;
+    scale: 0;
+    margin: 0 -2rem 0 0;
+    transform-origin: -0.4rem 50%;
+    transition: all 350ms ease-in-out;
+  }
+  nav ul li ul {
+    position: absolute;
+    overflow: hidden;
+    top: 110%;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    transition: all 350ms ease-in-out;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color:  var(--dark-bg);
+    border-radius: 1rem;
+    gap: 0.1rem;
+    padding: 0.2rem 0;
+  }
+  nav ul li ul li {
+    padding: 0 0.2rem;
+    margin: 0;
+    width: 100%;
+    list-style: none;
+  }
+  nav ul li ul li a {
+    width: 100%;
+    border-radius: 0.95rem;
+    padding: 0.5rem 0.5rem;
+  }
+  nav ul li ul li a:hover {
+    background-color: wheat;
+  }
+
   .btn.btn-outline-info {
       color: wheat;
       border-color: wheat;
@@ -145,12 +246,12 @@ a:link {
     border-color:  var(--dark-bg);
   }
   .btn.btn-outline-select {
-    color: wheat ;
+    color: wheat;
     border-color: wheat;
-    &:hover {
-        background-color: wheat;
-        color: black;
-        border-color: rgba(33, 37, 41, 0.2);
+        &:hover {
+            background-color: wheat;
+            color: black;
+            border-color: rgba(33, 37, 41, 0.2);
     }
 }
 
@@ -160,15 +261,12 @@ a:link {
   }
 
   .banner-top {
-    background-color:  var(--dark-bg);
+    background-color:  var(--dark-bg) !important;
     }
     
     .footer {
         background-color:  var(--dark-bg);
         box-shadow: 0 0 10px wheat;
-        color: wheat;
-    }
-    .nav-item {
         color: wheat;
     }
 

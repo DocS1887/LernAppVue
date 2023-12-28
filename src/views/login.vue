@@ -1,6 +1,12 @@
 <template>
-  <div>
+  <div v-if="isloggedIn">
+    <h2 >Willkommen</h2>
+    <p>Hallo {{ this.username }} </p>
+    <p>Du hast dich erfolgreich angemeldet!</p>
+  </div>
+  <div v-if="!isloggedIn"> 
     <h2>Anmeldung</h2>
+
     <div>
       <form class="px-4 py-3" @submit.prevent="login">
         <div class="mb-3">
@@ -38,7 +44,13 @@ export default {
       username: '',
       password: '',
       message: '',
+      isloggedIn: false,
+      begruessung: '',
+      user_id: '',
     };
+  },
+  mounted() {
+    this.checkLogin()
   },
   methods: {
     async login() {
@@ -46,14 +58,24 @@ export default {
         const response = await axios.post('http://127.0.0.1:5000/login', {
           username: this.username,
           password: this.password,
+          
         });
 
-
-        const token = response.data.token
+      
+        const token = response.data.token;
+        const user_id = response.data.user_id;
+        this.user_id = user_id;
         if (response.data.message === 'Erfolgreich eingeloggt' ) {
           localStorage.setItem('authToken', token)
-          window.location.reload();
-          this.$router.push({ name: 'Testung' });
+          localStorage.setItem('user', this.username)
+          localStorage.setItem('user_id', this.user_id)
+          
+
+
+          this.isloggedIn = !this.isloggedIn;
+
+          this.reloadPage();
+
         } else {
           this.message = 'Anmeldung fehlgeschlagen';
         }
@@ -61,7 +83,21 @@ export default {
         console.error(error);
         this.message = 'Ein Fehler ist aufgetreten';
       }
+      
     },
+    reloadPage() {
+      window.location.reload();
+
+    },
+    checkLogin() {
+      const user = localStorage.getItem('user');
+      if(user != null) {
+        this.isloggedIn = true
+        this.username = user;
+      } else {
+        this.isloggedIn = false
+      }
+    }
   },
 };
 </script>
